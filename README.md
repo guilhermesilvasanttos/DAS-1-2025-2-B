@@ -22,10 +22,54 @@ Esta relacionada a toda a complexidade no inicio do desenvolvimento de software 
 utilizar os padrões disponiveis no aplicativo utilizado pelo mesmo para facilitar e efetuar um código correto e limpo, aprender framework para manipulação de páginas web ou uma versão diferente do primeiro framework, sistema reserva-se problema usando estrutura de dados x, e outros problemas parecidos utilizando estrutura em y.
 
 # Ocultamento de informação:
-Desenvolvimento em paralelo. Suponha que um sistema X foi implementado por meio de classes C1, C2, …, Cn. Quando essas classes ocultam suas principais informações, fica mais fácil implementá-las em paralelo, por desenvolvedores diferentes. Consequentemente, teremos uma redução no tempo total de implementação do sistema.
+# Desenvolvimento em paralelo. Suponha que um sistema X foi implementado por meio de classes C1, C2, …, Cn. Quando essas classes ocultam suas principais informações, fica mais fácil implementá-las em paralelo, por desenvolvedores diferentes. Consequentemente, teremos uma redução no tempo total de implementação do sistema.
 
-Flexibilidade a mudanças. Por exemplo, suponha que descobrimos que a classe Ci é responsável pelos problemas de desempenho do sistema. Quando detalhes de implementação de Ci são ocultados do resto do sistema, fica mais fácil trocar sua implementação por uma classe Ci', que use estruturas de dados e algoritmos mais eficientes. Essa troca também é mais segura, pois como as classes são independentes, diminui-se o risco de a mudança introduzir bugs em outras classes.
+# Flexibilidade a mudanças. Por exemplo, suponha que descobrimos que a classe Ci é responsável pelos problemas de desempenho do sistema. Quando detalhes de implementação de Ci são ocultados do resto do sistema, fica mais fácil trocar sua implementação por uma classe Ci', que use estruturas de dados e algoritmos mais eficientes. Essa troca também é mais segura, pois como as classes são independentes, diminui-se o risco de a mudança introduzir bugs em outras classes.
 
-Facilidade de entendimento. Por exemplo, um novo desenvolvedor contratado pela empresa pode ser alocado para trabalhar em algumas classes apenas. Portanto, ele não precisará entender toda a complexidade do sistema, mas apenas a implementação das classes pelas quais ficou responsável.
+# Facilidade de entendimento. Por exemplo, um novo desenvolvedor contratado pela empresa pode ser alocado para trabalhar em algumas classes apenas. Portanto, ele não precisará entender toda a complexidade do sistema, mas apenas a implementação das classes pelas quais ficou responsável.
 
 No entanto, para se atingir os benefícios acima, classes devem satisfazer à seguinte condição (ou critério): elas devem esconder decisões de projeto que são sujeitas a mudanças. Devemos entender decisão de projeto como qualquer aspecto de projeto da classe, como os requisitos que ela implementa ou os algoritmos e estruturas de dados que serão usados no seu código.
+
+# Aula 04/08/2025 - (Segunda-Feira)
+
+# Coesão:
+
+Toda classe deve implementar uma unica funcionalidade ou serviço, deve ter uma responsabilidade no sistema.
+
+# [Vantagens]:
+
+# Facilita a implementação de uma classe, bem como o seu entendimento e manutenção.
+# Facilita a alocação de um único responsável por manter uma classe.
+# Facilita o reúso e teste de uma classe, pois é mais simples reusar e testar uma classe coesa do que uma classe com várias responsabilidades.
+
+deve-se haver uma separação de interesse das classes, classe coesa deve ter uma unica responsabilidade,
+não se deve ter "mistura" de informações e propositos, cada classe deve ser exatamente voltada para o que foi definida em seu uso, havendo separação de funcionalidades e deveres que devem executar ao serem criados.
+
+# Acoplamento:
+
+# [Acoplamentoestrutural]: entre A e B ocorre quando uma classe A possui uma referência explícita em seu código para uma classe B. Por exemplo, o acoplamento entre Estacionamento e Hashtable é estrutural.
+
+# [Acoplamentoevolutivo(oulógico)] entre A e B ocorre quando mudanças na classe B tendem a se propagar para a classe A. No exemplo mencionado, no qual a classe A depende de um inteiro armazenado em um arquivo interno de B, não existe acoplamento estrutural entre A e B, pois A não declara nenhuma variável do tipo B, mas existe acoplamento evolutivo. Por exemplo, mudanças no formato do arquivo criado por B terão impacto em A.
+
+# [Beck] "quando mudanças em um elemento demandam mudanças em um outro elemento — corresponde à definição de acoplamento evolutivo"
+
+Existe uma conexão entre as duas classes, onde existe uma "dependencia" de um para com o outro.
+
+# SOLID 
+
+Principio de projetos onde pode ser recomendações génericas ou estrategicas, usado não somente para resolver um problema mas assegurar que seja uma solução que possa evoluir, tendo em vista que a maioria dos problemas ocorrem depois da implementação do software onde se deve manter onde surge o maior problema onde leva mais tempo para resoluções e dificuldade de entendimento no final dele, sobrepondo as soluções e gerando dificuldade de entendimento.
+
+# [Solid]:                                               
+# Single Responsibility Principle   
+# Open/Closed Principle
+# Liskov Substitution Principle                                       
+# Interface Segregation Principle
+# Dependency Inversion Principle
+# [=]
+# Princípio da Responsabilidade Única
+# Princípio Aberto/Fechado
+# Princípio da Substituição de Liskov
+# Princípio da Segregação de Interfaces
+# Princípio da Inversão de Dependências
+Tradução do significado
+
