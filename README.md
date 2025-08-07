@@ -2,7 +2,8 @@
 
 ## Arquiteturade código: Engenharia de software
 https://engsoftmoderna.info/cap5.html
-
+https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0
+https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0
 # Aula do dia 31/07/2025 
 
 # Introdução:
@@ -72,4 +73,15 @@ Principio de projetos onde pode ser recomendações génericas ou estrategicas, 
 # Princípio da Segregação de Interfaces
 # Princípio da Inversão de Dependências
 Tradução do significado
+
+# Sequencia do SOLID aula 07/08/2025
+
+SOLID: escrever a orientação do objeto de forma limpa e correta.
+
+seta vazada preenchida = herança
+seta preenchida = associação 
+seta vazada tracejada = implementação (interface)
+
+Single Resposability Principle: Cada pedaço de seu código tem uma unica responsabilidade.
+Interface Segregation Principle: Particular de responsabilidade unica com foco em interfaces.
 
