@@ -84,4 +84,18 @@ seta vazada tracejada = implementação (interface)
 
 Single Resposability Principle: Cada pedaço de seu código tem uma unica responsabilidade.
 Interface Segregation Principle: Particular de responsabilidade unica com foco em interfaces.
+# Sequencia SOLID  11/08/2025.
+
+Princípio da Inversão de Dependências: uma classe cliente de estabelecer dependencias prioritamente com abstrações e não implementações concretas, onde se inverte em vez depender classe, concreta clientes,devem depender de interfaces.
+controladores tinham uma dependencia que dependiam das interfaces de serviço e não com a implementação completa o IMPL.
+
+Prefira Composição a Herança:
+filho recebe tudo de herança do pai, frequentemente dizem que gerança viola o encapsulamento das classses pai, composição e assosiação é melhor que a utilização de herança,
+a melhor forma de utilizar a herança é (quando os filhos não tiverem ligação com o pai, onde um não substitui o outro).
+
+Principio de DEMETER:
+O principio do menor conhecimneto, todo metodo deveria invocar chamar as seguintes coisas ( sua propria classe), (de objetos passados como parametros), (de objetos criados pelo proprio metodo), (de atributos da classe do metodo),
+
+Principio aberto/fechado:
+uma classe deve estar fechada para modificação e aberta para extensao, afim de evitar maiores problemas não permitindo edição mas sim adição dessa classe,
 
