@@ -97,5 +97,11 @@ Principio de DEMETER:
 O principio do menor conhecimneto, todo metodo deveria invocar chamar as seguintes coisas ( sua propria classe), (de objetos passados como parametros), (de objetos criados pelo proprio metodo), (de atributos da classe do metodo),
 
 Principio aberto/fechado:
-uma classe deve estar fechada para modificação e aberta para extensao, afim de evitar maiores problemas não permitindo edição mas sim adição dessa classe,
+uma classe deve estar fechada para modificação e aberta para extensao, afim de evitar maiores problemas não permitindo edição mas sim adição dessa classe.
+
+Principios liskov:
+Ser capaz de substituir um filho pelo outro sem quebra para que continue funcionando normalmente.
+
+# Padrões de projeto
+conjunto de soluções para problemas comuns da engenharia de software, 
 
