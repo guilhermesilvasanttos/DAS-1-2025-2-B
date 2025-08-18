@@ -4,6 +4,9 @@
 https://engsoftmoderna.info/cap5.html
 https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0
 https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0
+
+https://refactoring.guru/design-patterns
+
 # Aula do dia 31/07/2025 
 
 # Introdução:
