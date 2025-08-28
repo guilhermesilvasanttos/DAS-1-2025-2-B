@@ -7,6 +7,8 @@ https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0
 
 https://refactoring.guru/design-patterns
 
+https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/18[%3Bvnd.vst.idref%3Dcap1.xhtml]!/4/2/2/1:0[%2CCAP]
+
 # Aula do dia 31/07/2025 
 
 # Introdução:
@@ -106,5 +108,18 @@ Principios liskov:
 Ser capaz de substituir um filho pelo outro sem quebra para que continue funcionando normalmente.
 
 # Padrões de projeto
-conjunto de soluções para problemas comuns da engenharia de software, 
+conjunto de soluções para problemas comuns da engenharia de software.
+
+# Aula 28/08/2025
+Arquitetura é sobre algo importante… seja lá o que for.
+
+— Ralph Johnson
+
+escrever uma arquitetura unicamente pela estrutura não exibe essa arquitetura em sua totalidade.“É uma arquitetura de microsserviços.” Nesse caso, o arquiteto fala apenas da estrutura do sistema, não da arquitetura do sistema.
+
+Caracteristicas: As características da arquitetura são outra dimensão da definição da arquitetura de software. As características definem os critérios de sucesso de um sistema, em geral ortogonal quanto à funcionalidade. Note que todas as características listadas não requerem conhecimento da funcionalidade do sistema, embora sejam necessárias para ele funcionar corretamente. - (Requisitos não duncionais).
+
+Decisões de arquitetura: É uma decição de qual modelo iremos utilizar para se trabalhar, onde buscamos escolher com base na maior familaridade com os prosutos de software e vuscamos agilidade e eficiencia na hora de fazer um modelo para se construir algo.(impedindo a camada de apresentação de fazer chamados diretos no banco de dados. As decisões da arquitetura formam os limites do sistema e orientam as equipes de desenvolvimento sobre o que é ou não permitido.)
+
+Princios de desiner: Impedindo a camada de apresentação de fazer chamados diretos no banco de dados. As decisões da arquitetura formam os limites do sistema e orientam as equipes de desenvolvimento sobre o que é ou não permitido.(Evitar o uso de acoplamento no desenvolvimento de software, utilização de mensagem assincrona entre os bancos de dados, utilizando uma boa pratica para evitar dependencias e maiores problemas)
 
