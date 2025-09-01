@@ -123,3 +123,10 @@ Decisões de arquitetura: É uma decição de qual modelo iremos utilizar para s
 
 Princios de desiner: Impedindo a camada de apresentação de fazer chamados diretos no banco de dados. As decisões da arquitetura formam os limites do sistema e orientam as equipes de desenvolvimento sobre o que é ou não permitido.(Evitar o uso de acoplamento no desenvolvimento de software, utilização de mensagem assincrona entre os bancos de dados, utilizando uma boa pratica para evitar dependencias e maiores problemas)
 
+# 01/09/2025
+
+# Expectativas de um arquiteto:
+Tem como objetivo orientar o tipo de arquitetura sera usado nos projetos orientando a equipe e os projetos, tomar decições, analise, se manter atualizado com o mercado de trabalho e as novas tendencias de tecnologia sempre verificando o beneficio e os contra sobre a nova tendencia do mercado para gerar lucro para a empresa, o arquiteto tem a responsabilidade de tomar as decições dificeis e conseguir resolver os problemas, o arquiteto deve responder a conformidade do sistema fazendo com que sigam o projeto, possuir jogo de cintura politico na empresa navegando entre as gestões que tomam as deciçoes e clientes. 
+
+# Operação/Devops
+O proposito do devops é entregar valor para o vliente unindo os desenvolvedores e os arquitetos do software, planejamento, codificação, publicar o codigo em um lugar central, possui um ciclo enfinito de trazer a satisfação do cliente junto das equipes de desenvolvimento do software, sendo dividido entre cultura e cargo onde possuem as suas diferenças. manter um controle das versões aonde seja confiavel.
