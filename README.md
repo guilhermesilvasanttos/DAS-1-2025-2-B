@@ -130,3 +130,13 @@ Tem como objetivo orientar o tipo de arquitetura sera usado nos projetos orienta
 
 # Operação/Devops
 O proposito do devops é entregar valor para o vliente unindo os desenvolvedores e os arquitetos do software, planejamento, codificação, publicar o codigo em um lugar central, possui um ciclo enfinito de trazer a satisfação do cliente junto das equipes de desenvolvimento do software, sendo dividido entre cultura e cargo onde possuem as suas diferenças. manter um controle das versões aonde seja confiavel.
+
+# 04/09/2025
+Resuma a diferençca entre: Arquitetura e Design:
+
+Arquiteto: analisar os requisitos comerciais para extrair e definir as características da arquitetura (os “atributos”), selecionar quais padrões e estilos da arquitetura se encaixariam no domínio do problema e criar componentes, responsavel pela arquitetura do projeto o esqueleto do desenvolvimento.
+Desgnir: 
+Responsavel por transformar essas ideias do arquiteto em programa visual onde podemos ver o abstrato ao fisico e como essa ideia toma forma depende do designer por isso os dois devem estar juntos na equipe e em sintonia para melhor elaboração das ideias.
+
+Como é a formação do conhecimento de um arquiteto modelo T:
+O conhecimento do arquiteto em modelo T é de suma importancia para o desenvolvimento de software onde ele é responsavel por resolver problemas complexos com especialidade entendendo o contexto geral do projeto e do problema a ser resolvido sen muito adapitativel, dominado profundidade tecnica e amplitude interdiciplinar conectando nao somente o software mas tambem os conhecimentos da vida real.
