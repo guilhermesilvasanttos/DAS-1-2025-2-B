@@ -12,5 +12,6 @@
     <modules>
         <module>solid</module>
         <modulo>designpatterns</modulo>
+        <modulo>eventos</modulo>
     </modules>
 </project>
