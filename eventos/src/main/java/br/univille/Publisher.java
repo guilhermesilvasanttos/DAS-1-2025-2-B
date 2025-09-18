@@ -1,7 +1,11 @@
 package br.univille;
 
+import com.azure.core.amqp.AmqpTransportType;
 import com.azure.identity.DefaultAzureCredential;
 import com.azure.identity.DefaultAzureCredentialBuilder;
+import com.azure.messaging.servicebus.ServiceBusClientBuilder;
+import com.azure.messaging.servicebus.ServiceBusMessage;
+import com.azure.messaging.servicebus.ServiceBusSenderClient;
 
 public class Publisher {
     public static void main(String[] args) {
@@ -14,7 +18,7 @@ public class Publisher {
         String chave = System.getenv("CHAVE");
 
         ServiceBusSenderClient senderClient =
-            new serviceBusClientBuilder()
+            new ServiceBusClientBuilder()
                 .fullyQualifiedNamespace(servidor)
                 .transportType(AmqpTransportType.AMQP_WEB_SOCKETS)
                 //.credential(credential)
