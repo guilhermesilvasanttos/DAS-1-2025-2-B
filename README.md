@@ -143,3 +143,62 @@ O conhecimento do arquiteto em modelo T é de suma importancia para o desenvolvi
 
 # 08/09/2025
 Na arquitetura não existe certou ou errado existe compensações, existe modelo por topico aonde existe assinantes que recebem a mensagem que desejam e os publicadores que mandam ela se tornando observadores do topico e recebendo a mensagem, a utilização da nuvem posssibilita a alta disponibilidade do topico onde funciona como uma notificação de algum evento sendo quem envia e voce o destinatario final, existi outras maneiras tambem dese utilizar um broken utilizando o sistema de filas tambem para manter a ordem, mantendo uma diferença distribuindo mais vezes as mensagem, onde tem uma fila para cada instancia, mantendo mais copias onde á armazena estas menssagens e as distribui posteriormente, no topico existe variação de que ele tera que distribuir em mais vezes e já na fila existe um maior acoplamento nas menssagens já que ele vai estar dependendo de uma instancia anterior para estar recebendo as informações, existindo um trade off nas trocas de mensagens não possuindo um certo ou um errado depende da aplicabilidade para o seu sistema.
+
+# 2 - BIMESTRE
+# 06/10/2025
+
+# O Que São Características da Arquitetura.
+Quando uma empresa decide resolver um problema com software, ela cria uma lista de requisitos funcionais (o que o sistema deve fazer). No entanto, arquitetos de software também precisam se concentrar em requisitos além da funcionalidade, chamados de características da arquitetura, essenciais para o sucesso do sistema como um todo.
+Uma característica da arquitetura é algo que.
+Vai além da lógica do domínio não é uma função direta do sistema.
+Influencia a estrutura do design afeta componentes, módulos, camadas e afins.
+É essencial ou importante para o sucesso da aplicação.
+
+# Por Que Evitar o Termo Requisito Não Funcional?
+É considerado depreciativo ou pouco claro.
+Outros termos como atributos de qualidade também são enganosos.
+O termo características da arquitetura é preferido, pois reforça sua importância no design estratégico do sistema.
+
+# Tipos de Características da Arquitetura
+Características Operacionais.
+Relacionadas à execução e comportamento do sistema em produção. Exemplos.
+Disponibilidade.
+Desempenho.
+Escalabilidade.
+Recuperabilidade.
+Confiabilidade - Segurança.
+Robustez.
+
+# Interagem diretamente com áreas como DevOps e infraestrutura.
+Características Estruturais.
+Relacionadas à forma como o sistema é organizado internamente.
+Modularidade.
+Manutenibilidade.
+Portabilidade.
+Extensibilidade.
+Reutilização.
+Atualização.
+
+# Envolvem qualidade interna do código e facilidade de evolução do sistema.
+Características Transversais.
+Restrições e capacidades que afetam múltiplas áreas do sistema.
+Acessibilidade.
+Autenticação - Autorização.
+Privacidade.
+Legalidade regulações, compliance.
+Usabilidade.
+Armazenamento de dados.
+Frequentemente envolvem requisitos legais, de segurança ou de experiência do usuário.
+
+# Importância dos Trade-offs
+Arquitetura exige equilíbrio, melhorar uma característica segurança pode prejudicar outra desempenho.
+Assim como pilotar um helicóptero, alterar um controle afeta os outros.
+Portanto, o papel do arquiteto é fazer compensações inteligentes, visando sempre a arquitetura menos pior, e não a ideal.
+
+# Iteratividade e Evolução
+Não é necessário acertar a arquitetura perfeita desde o início, Arquiteturas iterativas, que permitem mudanças ao longo do tempo, são mais sustentáveis.
+Isso está alinhado com os princípios do desenvolvimento ágil,A arquitetura de software não é apenas sobre funcionalidade. 
+É uma prática estratégica que envolve decisões estruturais e operacionais críticas, levando em conta limitações, objetivos de negócio e contexto técnico.
+Os arquitetos precisam,
+Identificar e priorizar as características mais importantes. Navegar pelos trade-offs, Manter a arquitetura flexível e evolutiva,
+Criar uma linguagem comum com a equipe para evitar ambiguidades.
