@@ -202,3 +202,11 @@ Isso está alinhado com os princípios do desenvolvimento ágil,A arquitetura de
 Os arquitetos precisam,
 Identificar e priorizar as características mais importantes. Navegar pelos trade-offs, Manter a arquitetura flexível e evolutiva,
 Criar uma linguagem comum com a equipe para evitar ambiguidades.
+
+# 09/10/2025
+
+https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
+
+Circuit breaker:
+Básicamente serve como se fosse um dijuntor no sistema, onde esta dando problema ele corta a comunicação com o sistema B, fechado, aberto e meio aberto,
+onde quando esta dando problema ele corta a comunicação para evitar o estresse do outo que esta dando problema, isso funciona como um ponto de segurança e para ajudar o sistema a se manter, contando a quantidade de erros para ir ao aberto e acertos para se manter em meio aberto e logo posteriormente ser direcionado para o sistema de fechado. 
