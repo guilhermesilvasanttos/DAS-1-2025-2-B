@@ -210,3 +210,23 @@ https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
 Circuit breaker:
 Básicamente serve como se fosse um dijuntor no sistema, onde esta dando problema ele corta a comunicação com o sistema B, fechado, aberto e meio aberto,
 onde quando esta dando problema ele corta a comunicação para evitar o estresse do outo que esta dando problema, isso funciona como um ponto de segurança e para ajudar o sistema a se manter, contando a quantidade de erros para ir ao aberto e acertos para se manter em meio aberto e logo posteriormente ser direcionado para o sistema de fechado. 
+
+# 13/10/2025
+# CQRS
+Command Query Responsability Segregation:
+Faz a segregação dos bancos de dados para que se evite o dead lock onde evita estresse do banco de dados em estar lidadando com dois bancos escrevendo e lendo sendo evitado alocando um banco somente para leitura e outra para escrever assim evitando problemas como dead lock, isto é eficiente porem o custo para se fazer este tipo aumenta consideravelmente então deve-se considerar a viabilidade de estar implementando este tipo de tratativa, muito eficiente quando é algo escrito no sistema de banco de dados ele faz uma copia disso e passa para o 2 banco de dados em tempo real então sempre mantem sincronizado o que esta sendo implementado com o que esta somente sendo utilizado para leitura. 
+
+# grande bola de lama
+é uma confusão em forma de espaguete no sistem u padrão que cresceu de forma descontrolada onde as informações foram compartilhadas de forma indiscriminada e de forma duplicada.
+sistema dificil de evoluir, manter, corrigir.
+
+# Arquitetura Unitaria
+Software que rodava somente naquele unico computador.
+
+# Arquitetura cliente/Servidor:
+Desktop + Servidor de banco de dados trabalhado como um bano de dados central e ao redor dela os computadores que acessam este banco de dados os data base center, 
+codigo efetuado somente no banco de dados onde os computadores cliente fazem somente o pedido para o banco de dados rodar o codigo de execução.
+
+# Sistema navegador + servidor web:
+Logica esta localizada na web onde traz o html para o cliente trafegando pelo servidor web, trazendo problemas de padronização no começo do desenvolvimento dos codigos via web
+onde ocorre o o processamento mais pesado na web e no banco de dados. onde ele separa a inicialização do codigo sendo parte no computador do cliente para as paginas e o mais pesado no banco de dados, api rest.
