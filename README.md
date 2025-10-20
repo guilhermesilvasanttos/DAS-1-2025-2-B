@@ -230,3 +230,16 @@ codigo efetuado somente no banco de dados onde os computadores cliente fazem som
 # Sistema navegador + servidor web:
 Logica esta localizada na web onde traz o html para o cliente trafegando pelo servidor web, trazendo problemas de padronização no começo do desenvolvimento dos codigos via web
 onde ocorre o o processamento mais pesado na web e no banco de dados. onde ele separa a inicialização do codigo sendo parte no computador do cliente para as paginas e o mais pesado no banco de dados, api rest.
+
+* retry
+Quando um aplicativo tenta se comunicar com um serviço e dá erro, ele pode lidar com isso de três jeitos:
+
+- Cancel.
+Se o erro não é temporário (ou seja, não vai adiantar tentar de novo), o melhor é cancelar a operação e mostrar um erro.
+
+- Retry immediately.
+Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo imediatamente.
+
+- retry after delay.
+Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
+
