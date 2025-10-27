@@ -243,3 +243,18 @@ Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo im
 - retry after delay.
 Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 
+# 23/10/2025 
+
+
+
+
+
+
+# 27/10/2025
+Pipeline: consiste em canais onde programa faz comunicação com outro programa para leitura desdes arquivos onde um gera e outro importa se acrescenta em pipeline, a arquitetura faz coisas especificas onde tem entrada e saida padrões e possam interagir.
+
+Filros: produtores: ponto de partida do processo chamado da origem.
+Transformador: aceita opcionalmente uma transformação de algum dado.
+Verificador: verificar e testa os criterios, então produz uma saida opcional.
+Consumirdor: Ponto final do fluxo de pipeline, persistem resultado final do processo de pipeline para um banco de dados ou podem exibir os resultados finais em tela UI.
+// docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red //
