@@ -257,4 +257,3 @@ Filros: produtores: ponto de partida do processo chamado da origem.
 Transformador: aceita opcionalmente uma transformação de algum dado.
 Verificador: verificar e testa os criterios, então produz uma saida opcional.
 Consumirdor: Ponto final do fluxo de pipeline, persistem resultado final do processo de pipeline para um banco de dados ou podem exibir os resultados finais em tela UI.
-// docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red //
