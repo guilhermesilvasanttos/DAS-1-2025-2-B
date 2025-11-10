@@ -244,17 +244,181 @@ Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo im
 Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 
 # 23/10/2025 
+# Aula 26
+## Arquitetura em Camadas (N-tier)
 
+Estilo comum, simples, barato e natural para equipes organizadas por funções (UI, negócio, banco). Usada frequentemente como ponto de partida em projetos.
 
+## Estrutura
 
+Quatro camadas típicas: apresentação, negócio, persistência e banco de dados. Camadas podem ser combinadas ou separadas conforme o tamanho da aplicação.
 
+## Isolamento
 
+Camadas fechadas comunicam-se apenas com a adjacente, garantindo baixo acoplamento e facilitando mudanças isoladas. Camadas abertas aumentam o acoplamento e fragilidade.
 
-# 27/10/2025
-Pipeline: consiste em canais onde programa faz comunicação com outro programa para leitura desdes arquivos onde um gera e outro importa se acrescenta em pipeline, a arquitetura faz coisas especificas onde tem entrada e saida padrões e possam interagir.
+## Limitações
 
-Filros: produtores: ponto de partida do processo chamado da origem.
+Bom para sistemas pequenos e com requisitos pouco claros. Apresenta baixo desempenho, escalabilidade limitada e difícil manutenção em sistemas maiores. Propenso ao antipadrão “sinkhole”, onde camadas apenas repassam dados sem lógica.
+
+## Classificação
+
+- Fácil e barato de implementar.
+- Baixa testabilidade e implementabilidade.
+- Confiabilidade média.
+- Escalabilidade e tolerância a falhas muito baixas.
+
+# Aula 28 - 27/10/25
+
+## Arquitetura Pipeline
+
+`ps ax` -> comandos do linux que mostra os programas em execução
+`tail` -> mostra as 10 ultimas linhas. Exemplo de uso: `ps ax | tail`
+`grap` -> filtra pelas linhas que tem "java". Exemplo de uso: `ps ax | grap -i java | tail` 
+`curl` -> faz buscas na internet e retorna o código fonte da página. Exemplo de uso: `curl https://www.univille.br`
+`wget` -> baixa o código fonte de uma página web. Exemplo de uso: `wget https://www.univille.br`
+
+# Aula 29 - 30/10/25
+
+## Arquitetura Microkernel (ou Arquitetura de Plug-in)
+
+### Conceito
+A arquitetura microkernel é um estilo arquitetural que separa o sistema em duas partes principais:
+Sistema Central (core): contém apenas a funcionalidade mínima necessária para o funcionamento do sistema.
+Componentes de Plug-in: módulos independentes e autônomos que adicionam ou estendem funcionalidades específicas.
+Esse modelo é amplamente utilizado em aplicações baseadas em produtos, como IDEs (ex: Eclipse), navegadores (ex: Chrome, Firefox) e softwares corporativos personalizáveis.
+
+### Sistema Central
+
+Representa o núcleo mínimo que garante o funcionamento básico do sistema.
+Deve conter apenas o fluxo principal (“caminho feliz”) da aplicação, deixando regras específicas e complexas para os plug-ins.
+
+Pode ser implementado como:
+- Um monólito modular;
+- Um conjunto de serviços de domínio (quando há mais complexidade).
+
+Exemplo:
+No processamento de pagamentos, o sistema central define o fluxo de pagamento, e cada método de pagamento (cartão, PayPal, vale, etc.) é um plug-in separado.
+
+Componentes de Plug-in
+
+São autônomos, independentes e especializados.
+Contêm lógicas específicas que ampliam ou personalizam o sistema.
+O ideal é que não tenham dependência entre si.
+
+Podem ser:
+
+- Estáticos (em tempo de compilação) → exigem reinstalação para atualizar;
+- Dinâmicos (em tempo de execução) → podem ser adicionados/removidos sem reiniciar o sistema (ex: via OSGi).
+
+Formas de implementação:
+
+- Como bibliotecas compartilhadas (JAR, DLL, Gem);
+- Como pacotes ou namespaces dentro do mesmo projeto;
+- Como serviços remotos (REST ou mensageria), o que torna a arquitetura distribuída, mas mais complexa.
+
+Registro de Plug-ins
+
+O sistema central precisa saber quais plug-ins existem e como acessá-los. Isso é feito por meio de um registro, que pode ser:
+
+- Uma estrutura simples (ex: Map interno com nome e referência do plug-in);
+- Ou um sistema de registro mais complexo (ex: ZooKeeper, Consul).
+
+Cada registro inclui informações como:
+
+Nome do plug-in;
+
+Contrato de dados (entrada e saída);
+
+Protocolo de comunicação (local, REST, mensageria).
+
+Contratos
+
+Os contratos definem como o sistema central e os plug-ins se comunicam, especificando:
+
+Métodos obrigatórios (ex: register(), assess(), deregister());
+
+Formato dos dados de entrada e saída (XML, JSON ou objetos).
+
+Quando há plug-ins de terceiros, podem ser criados adaptadores para alinhar o contrato padrão do sistema com o contrato externo.
+
+Casos de Uso
+
+Eclipse: o sistema central é o editor básico; as funcionalidades são adicionadas por plug-ins.
+
+Jenkins / Jira / Chrome: novos recursos são adicionados como extensões.
+
+# Aplicações corporativas: como sistemas de seguros ou impostos, onde regras específicas de cada jurisdição ou legislação são isoladas em plug-ins independentes, permitindo fácil atualização sem afetar o sistema base.
+
+# Pipeline: consiste em canais onde programa faz comunicação com outro programa para leitura desdes arquivos onde um gera e outro importa se acrescenta em pipeline, a arquitetura faz coisas especificas onde tem entrada e saida padrões e possam interagir.
+
+# Filros: produtores: ponto de partida do processo chamado da origem.
 Transformador: aceita opcionalmente uma transformação de algum dado.
 Verificador: verificar e testa os criterios, então produz uma saida opcional.
 Consumirdor: Ponto final do fluxo de pipeline, persistem resultado final do processo de pipeline para um banco de dados ou podem exibir os resultados finais em tela UI.
-// docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red //
+
+# Aula 10/11/2025 e 13/11/2025
+# Arquitetura de Microsserviços:
+Microsserviços são um estilo de arquitetura que divide uma aplicação em vários serviços pequenos, independentes e especializados, cada um responsável por uma parte específica do domínio. Tornou-se popular após o artigo de Martin Fowler e James Lewis (2014), que formalizou seus princípios.
+
+# Filosofia e Inspiração:
+
+A arquitetura é fortemente inspirada no Domain-Driven Design (DDD), especialmente no conceito de Contexto Delimitado (Bounded Context), que defende o desacoplamento entre domínios e a autonomia de cada parte do sistema.
+Reutilização é sacrificada em prol do desacoplamento e da independência.
+
+# Topologia e Características Principais:
+Distribuída: cada serviço roda em seu próprio processo, geralmente em contêineres ou máquinas virtuais.
+Independência: cada serviço possui seus próprios componentes e banco de dados.
+Desacoplamento extremo: aumenta a flexibilidade e a escalabilidade, mas pode reduzir a performance devido ao custo das chamadas de rede.
+
+# Granularidade
+O termo “micro” não significa “minúsculo”.
+O tamanho de um microsserviço deve corresponder a um domínio funcional ou fluxo de trabalho, e não ser pequeno por si só.
+Serviços pequenos demais geram excesso de comunicação e complexidade.
+A granularidade ideal é alcançada por iteração e ajuste contínuo.
+
+# Isolamento dos Dados
+Cada microsserviço deve ter seu próprio banco de dados, evitando esquemas compartilhados.
+Isso permite escolher tecnologias adequadas para cada caso (SQL, NoSQL, etc.), mas elimina a noção de “fonte única de verdade”.
+Gera desafios de sincronização e consistência, mas melhora a independência e a evolutividade.
+
+# Camada de API
+Uma camada de API pode centralizar acessos externos, descoberta de serviços e balanceamento, mas não deve conter lógica de negócios nem atuar como orquestrador — para manter o princípio de domínio independente.
+
+# Reutilização Operacional e Sidecar
+Para lidar com preocupações comuns (monitoramento, logs, segurança), utiliza-se o padrão sidecar, um componente acoplado ao serviço apenas em nível operacional.
+Esses sidecars formam uma malha de serviços (service mesh), oferecendo uma visão global e controle centralizado das operações.
+
+# Front-ends
+Dois estilos são comuns:
+Front-end monolítico: única interface para todos os serviços (mais simples, mas menos modular).
+Microfront-ends: cada microsserviço possui sua própria parte da interface, sincronizada com os demais — garantindo alinhamento entre back-end e UI.
+
+# Comunicação entre Serviços
+# Síncrona: geralmente via REST ou gRPC.
+Assíncrona: baseada em eventos e mensagens, o que reduz o acoplamento e melhora a resiliência.
+A heterogeneidade é aceita — cada serviço pode usar tecnologias diferentes (Java, .NET, Python etc.).
+
+# Coreografia vs. Orquestração
+Coreografia: os serviços se comunicam diretamente por eventos, sem mediador central (mais desacoplada).
+Orquestração: um serviço central coordena o fluxo entre outros serviços (mais controle, porém mais acoplamento).
+Coreografia é mais fiel à filosofia dos microsserviços, mas orquestração é útil para fluxos complexos.
+
+# Transações e Padrão Saga
+Evita-se transações distribuídas (entre serviços).
+Quando necessário, usa-se o padrão Saga, em que um serviço mediador coordena as etapas da transação e executa ações de compensação (undo) em caso de falha.
+Deve ser usado com cautela, pois aumenta a complexidade.
+
+# Pontos Fortes
+# Escalabilidade e Elasticidade – os serviços escalam de forma independente.
+# Evolutividade – permite mudanças rápidas e contínuas.
+# Alta coesão e baixo acoplamento – cada serviço é autônomo e focado.
+# Integração com DevOps – CI/CD e automação são essenciais.
+
+# Desvantagens e Trade-offs
+# Performance inferior devido à comunicação em rede.
+# Complexidade operacional maior (monitoramento, versionamento, segurança).
+# Dificuldade em manter consistência transacional.
+
+A arquitetura de microsserviços maximiza o desacoplamento e a autonomia, transformando os princípios do DDD em uma estrutura física.
+Embora traga complexidade e desafios de performance, oferece grande flexibilidade, escalabilidade e adaptabilidade, sendo ideal para organizações que exigem evolução contínua e alta disponibilidade.
