@@ -17,5 +17,7 @@
         <modulo>microkernel-interface</modulo>
         <modulo>microkernel-kernel</modulo>
         <modulo>microkernel-plugin</modulo>
+        <modulo>app-a</modulo>
+        <modulo>app-b</modulo>
     </modules>
 </project>
