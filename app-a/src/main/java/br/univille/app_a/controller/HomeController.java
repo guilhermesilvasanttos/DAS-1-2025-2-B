@@ -19,7 +19,7 @@ public class HomeController {
         try(DaprClient client = new DaprClientBuilder().build()){
             var mensagem = "Hello from App A";
             client.invokeMethod("app-b", "/api/v1/startBSync",
-                mensagem,HttpExtension.POST);
+                mensagem,HttpExtension.POST).block();
         } catch (Exception e) {
         }
 
